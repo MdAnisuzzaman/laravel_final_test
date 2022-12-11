@@ -36,7 +36,7 @@ class ProductController extends Controller
         $product->short_desc = $request->short_desc;
         $image = $request->image;
         if($image){
-            $folder = 'backend-asstes/db-images/products-images';
+            $folder = 'backend-asstes/db-images/products-images/';
             $imageName = 'pi'. time(). '.' . $image->getClientOriginalExtension(); 
             $image->move($folder,$imageName);
             $product->image = $folder.$imageName;
