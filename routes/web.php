@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/product',[HomeController::class,'product'])->name('product');
+Route::get('/productshow',[HomeController::class,'product'])->name('product.show');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function ()
