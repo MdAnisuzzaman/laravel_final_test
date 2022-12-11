@@ -13,4 +13,9 @@ class HomeController extends Controller
             return view('frontend.home.index',['categories'=>$categories]);
         }
     
+
+        public function product()
+        {
+            return view('frontend.product.index');
+        }
 }

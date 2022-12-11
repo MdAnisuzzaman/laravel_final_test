@@ -22,8 +22,11 @@ class ProductController extends Controller
 
         $request->validate([
             'name'       => 'required  | max:20  | min:4 | unique:products',
-            'short_desc' => 'required',
-            
+            'short_desc' => 'required',  
+        ],[
+            'name.required' => 'জয়বাংলা নাম দিতে হবে',
+            'short_desc'    => 'জয়বাংলা বিবরন দিতে হবে'
+
         ]);
         
         $product = new Product;
@@ -31,7 +34,13 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->category_id = $request->category_id;
         $product->short_desc = $request->short_desc;
-        $product->image = $request->image;
+        $image = $request->image;
+        if($image){
+            $folder = 'backend-asstes/db-images/products-images';
+            $imageName = 'pi'. time(). '.' . $image->getClientOriginalExtension(); 
+            $image->move($folder,$imageName);
+            $product->image = $folder.$imageName;
+        }
         $product->save();
         return redirect()->back()->with('msg', 'Product Added Successfully');
         
