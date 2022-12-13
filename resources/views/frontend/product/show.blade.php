@@ -22,7 +22,7 @@
     <div class="col-md-3 col-sm-6">
                 <div class="single-shop-product">
                     <div class="product-upper">
-                        <img src="{{asset('/')}}{{$product->image}}" alt="">
+                        <img src="{{asset('/')}}{{$product->image}}" alt="" style="width: 100%","height: 200px";>
                     </div>
                     <h2><a href="">{{$product->short_desc}}</a></h2>
                     <div class="product-carousel-price">
