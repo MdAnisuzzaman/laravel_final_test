@@ -24,7 +24,7 @@
                     <div class="product-upper">
                         <img src="{{asset('/')}}{{$product->image}}" alt="" style="width: 100%","height: 200px";>
                     </div>
-                    <h2><a href="">{{$product->short_desc}}</a></h2>
+                    <h2><a href="{{route('singleproduct',$product->id)}}">{{$product->name}}</a></h2>
                     <div class="product-carousel-price">
                         <ins>{{$product->price}}</ins> <del>$999.00</del>
                     </div>  

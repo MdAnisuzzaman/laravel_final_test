@@ -29,4 +29,11 @@ class HomeController extends Controller
         
         return view('frontend.product.show',compact('categories','products'));
     }
+    public function single($Id)
+    {
+        $categories = Category::all();
+        $products = Product::where('id',$Id)->get();
+        
+        return view('frontend.product.single-product',compact('categories','products'));
+    }
 }

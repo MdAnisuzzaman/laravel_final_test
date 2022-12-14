@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/productshow',[HomeController::class,'product'])->name('productshow');
 Route::get('/show/{id}',[HomeController::class,'show'])->name('show');
+Route::get('/singleproduct/{id}',[HomeController::class,'single'])->name('singleproduct');
+
 
 
 
